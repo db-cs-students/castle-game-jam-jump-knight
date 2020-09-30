@@ -274,7 +274,7 @@ scene.set_tile(2, img("""
     f f f c c c f f f
     f f f f c f f f f
 """))
-
+#enemies
 ghost_img = img("""
     . . . . . f f f f f . . . .
     . . . f f b 1 1 1 1 f f . .
@@ -296,6 +296,66 @@ ghost_img = img("""
 ghost = sprites.create(ghost_img)
 ghost.set_position(120, 870)
 
+ghost_img = img("""
+    . . . . . f f f f f . . . .
+    . . . f f b 1 1 1 1 f f . .
+    . . f b 1 1 1 1 1 1 1 b f .
+    . . f 1 1 1 1 1 1 1 1 1 f .
+    . f f f f 1 1 1 1 1 1 1 d f
+    f b 1 1 1 c 1 d d 1 1 1 d f
+    f f b 1 b 1 f d c 7 1 1 b f
+    . f f b f b f b 1 1 1 1 1 f
+    . . f f f f c f d b 1 b 1 f
+    . . . f c c c f c f b f b f
+    . . . . f c c c c c c f f f
+    . . . . . c c c c c c . . .
+    . . . . . c c c c c c . . .
+    . c . . c c c c c c c . . .
+    . c c c c c c c c c . . . .
+    . . c c c c c c c . . . . .
+""")
+ghost = sprites.create(ghost_img)
+ghost.set_position(120, 570)
+ghost_img = img("""
+    . . . . . f f f f f . . . .
+    . . . f f b 1 1 1 1 f f . .
+    . . f b 1 1 1 1 1 1 1 b f .
+    . . f 1 1 1 1 1 1 1 1 1 f .
+    . f f f f 1 1 1 1 1 1 1 d f
+    f b 1 1 1 c 1 d d 1 1 1 d f
+    f f b 1 b 1 f d c 7 1 1 b f
+    . f f b f b f b 1 1 1 1 1 f
+    . . f f f f c f d b 1 b 1 f
+    . . . f c c c f c f b f b f
+    . . . . f c c c c c c f f f
+    . . . . . c c c c c c . . .
+    . . . . . c c c c c c . . .
+    . c . . c c c c c c c . . .
+    . c c c c c c c c c . . . .
+    . . c c c c c c c . . . . .
+""")
+ghost = sprites.create(ghost_img)
+ghost.set_position(120, 670)
+ghost_img = img("""
+    . . . . . f f f f f . . . .
+    . . . f f b 1 1 1 1 f f . .
+    . . f b 1 1 1 1 1 1 1 b f .
+    . . f 1 1 1 1 1 1 1 1 1 f .
+    . f f f f 1 1 1 1 1 1 1 d f
+    f b 1 1 1 c 1 d d 1 1 1 d f
+    f f b 1 b 1 f d c 7 1 1 b f
+    . f f b f b f b 1 1 1 1 1 f
+    . . f f f f c f d b 1 b 1 f
+    . . . f c c c f c f b f b f
+    . . . . f c c c c c c f f f
+    . . . . . c c c c c c . . .
+    . . . . . c c c c c c . . .
+    . c . . c c c c c c c . . .
+    . c c c c c c c c c . . . .
+    . . c c c c c c c . . . . .
+""")
+ghost = sprites.create(ghost_img)
+ghost.set_position(120, 770)
 
 ghost_dir = -1
 def on_update():
