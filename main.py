@@ -294,19 +294,30 @@ def on_update_interval():
         . c . . c c c c c c c . . . . .
         . c c c c c c c c c . . . . . .
         . . c c c c c c c . . . . . . .
-    """), 80, 10)
+    """), 80, randint(10, 20))
 game.on_update_interval(1500, on_update_interval)
 
+# THE SWORD
+sword = sprites.create(img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . 1 . . . . . . . .
+    . . . . . . 1 1 1 . . . . . . .
+    . . . . . . 1 b 1 . . . . . . .
+    . . . . . . 1 b 1 . . . . . . .
+    . . . . . . 1 b 1 . . . . . . .
+    . . . . . . 1 b 1 . . . . . . .
+    . . . . . . 1 b 1 . . . . . . .
+    . . . . . . 1 b 1 . . . . . . .
+    . . . . . . 1 1 1 . . . . . . .
+    . . . . d d d d d d d . . . . .
+    . . . . . . . e . . . . . . . .
+    . . . . . . . e . . . . . . . .
+    . . . . . . . e . . . . . . . .
+    . . . . . . . e . . . . . . . .
+    . . . . . . . . . . . . . . . .
+"""))
+sword.set_position(120, 870)
 
-# ghost_dir = -1
-# def on_update():
-#     ghost_dir
-#     if ghost.x < 140:
-#         ghost_dir = 1
-    
-#     else:
-#         ghost_dir = -1
-#         ghost.set_position(ghost.x + ghost_dir, 870)
-# game.on_update(on_update)
+
 
 
