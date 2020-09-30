@@ -165,7 +165,7 @@ scene.set_background_image(img("""
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 """))
-# Tilemap
+# Tilemap make larger later
 scene.set_tile_map(img("""
     f..............f
     f..............f
@@ -268,3 +268,21 @@ scene.set_tile(14, img("""
     e d b d d d d e d b d d d d d d d d d d d d d e d b d d d d d e
     e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e
 """), True)
+scene.set_tile(2, img("""
+    . . . . . f f f f f . . . .
+    . . . f f b 1 1 1 1 f f . .
+    . . f b 1 1 1 1 1 1 1 b f .
+    . . f 1 1 1 1 1 1 1 1 1 f .
+    . f f f f 1 1 1 1 1 1 1 d f
+    f b 1 1 1 c 1 d d 1 1 1 d f
+    f f b 1 b 1 f d c 7 1 1 b f
+    . f f b f b f b 1 1 1 1 1 f
+    . . f f f f c f d b 1 b 1 f
+    . . . f c c c f c f b f b f
+    . . . . f c c c c c c f f f
+    . . . . . c c c c c c . . .
+    . . . . . c c c c c c . . .
+    . c . . c c c c c c c . . .
+    . c c c c c c c c c . . . .
+    . . c c c c c c c . . . . .
+"""))
