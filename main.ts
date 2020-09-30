@@ -6,30 +6,24 @@ Description: Game Jam: Castle, knight themed jump game with combat late game.
  */
 //  sprite player
 let knight = sprites.create(img`
-    ........................
-    ........................
-    .......555555555........
-    .....5555555555555......
-    ....555555555555555.....
-    ...55555555555555555....
-    ...55fff55555555fff5....
-    ..555fff55555555fff55...
-    ..555fff55555555fff55...
-    ..5555555555555555555...
-    ..5555555555555555555...
-    ..5555555555555555555...
-    ..5555555555555555555...
-    ..5555555555555555555...
-    ..5555555555555555555...
-    ..5555ffff555ffff5555...
-    ...555fffffffffff555....
-    ...555fffffffffff555....
-    ....555fffffffff555.....
-    .....5555555555555......
-    .......555555555........
-    ........................
-    ........................
-    ........................
+    ..................
+    ..................
+    ..88..............
+    .8888fffffff......
+    .8.ffbcbcbcf......
+    ...fcbbbbbbff.....
+    ...fbbffffff......
+    ...fcbdddddf......
+    ...fbbd1d1df......
+    ....fbdfdfdf......
+    .....fdddddf......
+    .....ffbbbff......
+    .....fbbbbbbfdd...
+    .....fbbbfbffdd...
+    .....ffffdfc......
+    .....fbddddf......
+    .....fccffcf......
+    .....fbbffbbf.....
 `, SpriteKind.Player)
 controller.moveSprite(knight, 110, 0)
 knight.setPosition(60, 870)
@@ -74,16 +68,6 @@ scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffff2fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2fffffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffbf222fbfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffbf222fbffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffb22422bfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb22422bffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffb24442bfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb24442bffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffb454bfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb454bfffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffffcccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcccffffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffffcccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcccffffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffffcccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcccffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -120,16 +104,26 @@ scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffff2fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2fffffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffbf222fbfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffbf222fbffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffb22422bfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb22422bffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffb24442bfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb24442bffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffb454bfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb454bfffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffffcccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcccffffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffffcccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcccffffffffffffffffffffffffffffffffffffffffffff
-    fffffffffffffffffffffffffffffffffffffcccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcccffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -173,55 +167,55 @@ scene.setTileMap(img`
     f..............f
     f..............f
     f..............f
-    f..............f
+    f2............2f
     f..............f
     f..............f
     f...5..........f
     feeeeeeeeee...ef
     f..............f
     f..............f
-    f.2.2...2..eeeef
+    f......2...eeeef
     f..............f
     f..............f
+    f.....eee......f
+    f..............f
+    feee2......2...f
+    f..............f
+    f.....eee......f
+    f..............f
+    f..........eeeef
+    f..............f
+    f...2......2...f
     f.....eee......f
     f..............f
     feee...........f
     f..............f
     f.....eee......f
+    f...2......2...f
+    f..........eeeef
     f..............f
-    f...2....2.eeeef
     f..............f
+    f.....eee......f
     f..............f
+    feee2......2...f
+    f..............f
+    f.....eee......f
+    f..............f
+    f..........eeeef
+    f..............f
+    f...2......2...f
     f.....eee......f
     f..............f
     feee...........f
     f..............f
     f.....eee......f
-    f..............f
-    f...2....2.eeeef
-    f..............f
-    f..............f
-    f.....eee......f
-    f..............f
-    feee...........f
-    f..............f
-    f.....eee......f
-    f..............f
-    f...2......eeeef
+    f...2......2...f
+    f..........eeeef
     f..............f
     f..............f
     f.....eee......f
     f..............f
-    feee...........f
-    f..............f
-    f.....eee......f
-    f..............f
-    f...2......eeeef
-    f..............f
-    f..............f
-    f.....eee......f
-    f..............f
-    feee...........f
+    feee2......2...f
     f..............f
     f..............f
     fddddddddddddddf
@@ -271,6 +265,18 @@ scene.setTile(14, img`
     e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e
 `, true)
 scene.setTile(2, img`
+    f f f f f f f f f
+    f f f f 2 f f f f
+    f b f 2 2 2 f b f
+    f b 2 2 4 2 2 b f
+    f b 2 4 4 4 2 b f
+    f f b 4 5 4 b f f
+    f f f c c c f f f
+    f f f c c c f f f
+    f f f c c c f f f
+    f f f f c f f f f
+`)
+let ghost_img = img`
     . . . . . f f f f f . . . .
     . . . f f b 1 1 1 1 f f . .
     . . f b 1 1 1 1 1 1 1 b f .
@@ -287,4 +293,18 @@ scene.setTile(2, img`
     . c . . c c c c c c c . . .
     . c c c c c c c c c . . . .
     . . c c c c c c c . . . . .
-`)
+`
+let ghost = sprites.create(ghost_img)
+ghost.setPosition(120, 870)
+let ghost_dir = -1
+game.onUpdate(function on_update() {
+    let ghost_dir: number;
+    ghost_dir
+    if (ghost.x < 140) {
+        ghost_dir = 1
+    } else {
+        ghost_dir = -1
+        ghost.setPosition(ghost.x + ghost_dir, 870)
+    }
+    
+})
