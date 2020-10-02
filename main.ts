@@ -4,6 +4,18 @@ Creators: Nick R. Jackson C.
 Description: Game Jam: Castle, knight themed jump game with combat late game.
 
  */
+// music
+forever(function on_forever() {
+    music.playMelody("D E D E C - - - ", 200)
+    music.playMelody("D E D C D - - - ", 200)
+    music.playMelody("C D - E - - E - ", 200)
+    music.playMelody("D C - D - - - - ", 200)
+    music.playMelody("D E D E C - - - ", 200)
+    music.playMelody("- D E D C D - - ", 200)
+    music.playMelody("- C D C D E - - ", 200)
+    music.playMelody("- C D C D - - C ", 200)
+    music.playMelody("- - - - - - - - ", 70)
+})
 //  sprite player
 let knight_right = img`
     ..................
@@ -87,27 +99,28 @@ let knight_left_jump = img`
 `
 let knight_still = img`
     ..................
-    ..................
-    ..88..............
-    .8888fffffff......
-    .8.ffbcbcbcf......
-    ...fcbbbbbbff..e..
-    ...fbbffffff...be.
-    ...fcbdddddf...bb.
-    ...fbbd1d1df..bbe.
-    ....fbdfdfdf..bbb.
+    .........88.......
+    ........88.8......
+    .....fffffff......
+    ....ffcbcbcff.....
+    ....fbbbbbbbf..e..
+    ....fbfffffbf..be.
+    ....fbdddddbf..bb.
+    ....fbd1d1dbf.bbe.
+    .....fdfdfdf..bbb.
     .....fdddddf..ebb.
     .....ffbbbff.ccccc
-    .....fbbbbbbfdde..
-    .....fbbbfbffdde..
-    .....ffffdfc...f..
-    .....fbddddf......
-    .....fccffcf......
-    .....fbbffbbf.....
+    ....fbbbbbbbfdde..
+    ...dffbfffbffdde..
+    ...ddcfbbbfc...f..
+    .....fccbccf......
+    .....fccfccf......
+    .....fbbfbbf......
 `
 let knight = sprites.create(knight_still, SpriteKind.Player)
 controller.moveSprite(knight, 110, 0)
 knight.setPosition(60, 870)
+knight.setFlag(SpriteFlag.ShowPhysics, true)
 // setup
 info.setScore(0)
 info.setLife(1)
@@ -254,7 +267,7 @@ scene.setTileMap(img`
     f2............2f
     f..............f
     f..............f
-    f...5..........f
+    f..............f
     feeeeeeeeee...ef
     f..............f
     f..............f
@@ -409,7 +422,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function on_overlap(
 })
 // animation
 game.onUpdate(function on_update() {
-    //  knight.say(str(controller.dx()))
+    //  knight.say(str(controller.x()))
     if (controller.dx() > 0 && controller.A.isPressed()) {
         knight.setImage(knight_right_jump)
     } else if (controller.dx() < 0 && controller.A.isPressed()) {

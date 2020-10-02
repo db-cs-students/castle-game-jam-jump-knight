@@ -3,6 +3,19 @@ Title: Jump Knight
 Creators: Nick R. Jackson C.
 Description: Game Jam: Castle, knight themed jump game with combat late game.
 """
+#music
+def on_forever():
+    music.play_melody("D E D E C - - - ", 200)
+    music.play_melody("D E D C D - - - ", 200)
+    music.play_melody("C D - E - - E - ", 200)
+    music.play_melody("D C - D - - - - ", 200)
+    music.play_melody("D E D E C - - - ", 200)
+    music.play_melody("- D E D C D - - ", 200)
+    music.play_melody("- C D C D E - - ", 200)
+    music.play_melody("- C D C D - - C ", 200)
+    music.play_melody("- - - - - - - - ", 70)
+forever(on_forever)
+
 # sprite player
 
 knight_right = img("""
@@ -87,27 +100,28 @@ knight_left_jump = img("""
 """)
 knight_still = img("""
     ..................
-    ..................
-    ..88..............
-    .8888fffffff......
-    .8.ffbcbcbcf......
-    ...fcbbbbbbff..e..
-    ...fbbffffff...be.
-    ...fcbdddddf...bb.
-    ...fbbd1d1df..bbe.
-    ....fbdfdfdf..bbb.
+    .........88.......
+    ........88.8......
+    .....fffffff......
+    ....ffcbcbcff.....
+    ....fbbbbbbbf..e..
+    ....fbfffffbf..be.
+    ....fbdddddbf..bb.
+    ....fbd1d1dbf.bbe.
+    .....fdfdfdf..bbb.
     .....fdddddf..ebb.
     .....ffbbbff.ccccc
-    .....fbbbbbbfdde..
-    .....fbbbfbffdde..
-    .....ffffdfc...f..
-    .....fbddddf......
-    .....fccffcf......
-    .....fbbffbbf.....
+    ....fbbbbbbbfdde..
+    ...dffbfffbffdde..
+    ...ddcfbbbfc...f..
+    .....fccbccf......
+    .....fccfccf......
+    .....fbbfbbf......
 """)
 knight = sprites.create(knight_still,SpriteKind.player)
 controller.move_sprite(knight,110,0)
 knight.set_position(60, 870)
+knight.set_flag(SpriteFlag.SHOW_PHYSICS, True)
 
 #setup
 info.set_score(0)
@@ -255,7 +269,7 @@ scene.set_tile_map(img("""
     f2............2f
     f..............f
     f..............f
-    f...5..........f
+    f..............f
     feeeeeeeeee...ef
     f..............f
     f..............f
@@ -416,7 +430,7 @@ sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap)
 
 #animation
 def on_update():
-    # knight.say(str(controller.dx()))
+    # knight.say(str(controller.x()))
     if controller.dx() > 0 and controller.A.is_pressed():
         knight.set_image(knight_right_jump)
     elif controller.dx() < 0 and controller.A.is_pressed():
@@ -428,4 +442,7 @@ def on_update():
     else:
         knight.set_image(knight_still)
 game.on_update(on_update)
+
+# def boss_fight():
+#     if knight.y <
 
