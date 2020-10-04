@@ -299,16 +299,16 @@ scene.set_background_image(img("""
 """))
 # Tilemap make larger later
 scene.set_tile_map(img("""
-    9999999699999999
-    9969999999999999
-    9999999999999959
-    9999999999699999
     9999999999999999
-    9399999999999939
-    3339999999999333
-    3339999999999333
-    eeeeeeeeeee333ee
-    3333333333333333
+    9999999999999999
+    9999999999999959
+    9999999999999999
+    3999999999999993
+    3999999999999993
+    3999999999999993
+    3999999999999993
+    eeeeeeeeeee...ee
+    f..............f
     f..............f
     f......2...eeeef
     f..............f
@@ -431,22 +431,22 @@ scene.set_tile(1, img("""
     b c c c c c d d d d c c c c c b
 """))
 scene.set_tile(3, img("""
-    b c c c c c d d d d c c c c c b
-    b f f f f f f d d f f f f f f b
-    b f f f f f f d d f f f f f f b
-    b f f f f f f d d f f f f f f b
-    b f f f f f f d d f f f f f f b
-    b c c c c c d d d d c c c c c b
-    b f f f f f f d d f f f f f f b
-    b f f f f f f d d f f f f f f b
-    b f f f f f f d d f f f f f f b
-    b f f f f f f d d f f f f f f b
-    b c c c c c d d d d c c c c c b
-    b f f f f f f d d f f f f f f b
-    b f f f f f f d d f f f f f f b
-    b f f f f f f d d f f f f f f b
-    b f f f f f f d d f f f f f f b
-    b c c c c c d d d d c c c c c b
+    a a a c c d d d d d d c c a a a
+    a a a a a a d d d d a a a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a c d d d d d d c a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a c d d d d d d c a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a a a d d d d a a a a a a
+    a a a a a a d d d d a a a a a a
+    a a a c c d d d d d d c c a a a
 """))
 scene.set_tile(9, img("""
     a a a a a a a a a a a a a a a a
@@ -467,22 +467,22 @@ scene.set_tile(9, img("""
     a a a a a a a a a a a a a a a a
 """))
 scene.set_tile(5, img("""
-    . . . . d d d d d d d . . . . .
-    . . d d d d 1 1 1 d d d d . . .
-    . d d d d d d d d d d d d d . .
-    . d d d d d d d d d d d d d . .
-    d d d 1 1 d d d d d 1 1 d d d .
-    d d d 1 1 d d d d d 1 1 d d d .
-    d d d d d d d d d d d d d d 1 .
-    d d d d d d 1 d d d d d d 1 1 .
-    d 1 d d d d 1 1 d d d d d d d .
-    d 1 d d d d d d d d d d d d d .
-    d 1 d d d d 1 1 d d d d d d d .
-    . d d d d d 1 1 d d d d d d . .
-    . d d 1 d d d d d d 1 1 d d . .
-    . . d d d d d d d d d d d . . .
-    . . . . d d d d d d d . . . . .
-    . . . . . . . . . . . . . . . .
+    a a a a d d d d d d d a a a a a
+    a a d d d d 1 1 1 d d d d a a a
+    a d d d d d d d d d d d d d a a
+    a d d d d d d d d d d d d d a a
+    d d d 1 1 d d d d d 1 1 d d d a
+    d d d 1 1 d d d d d 1 1 d d d a
+    d d d d d d d d d d d d d d 1 a
+    d d d d d d 1 d d d d d d 1 1 a
+    d 1 d d d d 1 1 d d d d d d d a
+    d 1 d d d d d d d d d d d d d a
+    d 1 d d d d 1 1 d d d d d d d a
+    a d d d d d 1 1 d d d d d d a a
+    a d d 1 d d d d d d 1 1 d d a a
+    a a d d d d d d d d d d d a a a
+    a a a a d d d d d d d a a a a a
+    a a a a a a a a a a a a a a a a
 """))
 #enemies
 
