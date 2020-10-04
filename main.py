@@ -15,6 +15,9 @@ def on_forever():
     music.play_melody("- C D C D - - C ", 200)
     music.play_melody("- - - - - - - - ", 70)
 forever(on_forever)
+# game Description:
+game.splash("Jump Knight", "Defeat Ghosts to upgrade your knight and escape the castle!")
+
 # boss_fight
 dark_knight = sprites.create(img("""
     ................................

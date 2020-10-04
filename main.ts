@@ -16,6 +16,8 @@ forever(function on_forever() {
     music.playMelody("- C D C D - - C ", 200)
     music.playMelody("- - - - - - - - ", 70)
 })
+//  game Description:
+game.splash("Jump Knight", "Defeat Ghosts to upgrade your knight and escape the castle!")
 //  boss_fight
 let dark_knight = sprites.create(img`
     ................................
