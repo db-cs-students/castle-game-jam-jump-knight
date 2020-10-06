@@ -659,17 +659,17 @@ game.onUpdate(function on_update() {
     }
     
 })
+//  else:
+//      knight.set_image(upgraded_knight_still)
 game.onUpdate(function on_update2() {
     if (info.score() > 10 && controller.dx() > 0 && controller.A.isPressed()) {
         knight.setImage(upgraded_knight_right_jump)
-    } else if (controller.dx() < 0 && controller.A.isPressed()) {
+    } else if (info.score() > 10 && controller.dx() < 0 && controller.A.isPressed()) {
         knight.setImage(upgraded_knight_left_jump)
-    } else if (controller.dx() > 0) {
+    } else if (info.score() > 10 && controller.dx() > 0) {
         knight.setImage(upgraded_knight_right)
-    } else if (controller.dx() < 0) {
+    } else if (info.score() > 10 && controller.dx() < 0) {
         knight.setImage(upgraded_knight_left)
-    } else {
-        knight.setImage(upgraded_knight_still)
     }
     
 })
@@ -815,10 +815,16 @@ let lava = sprites.create(img`
    2422244444242444242224444424244424222444442424442422422244444242444242224444424244424222444442424442422244444242444242224444424244424222444442424442422244444242
    4444444444454444444444444445444444444444444544444444444444444454444444444444445444444444444444544444444444444454444444444444445444444444444444544444444444444454
 `)
-lava.setPosition(80, 1050)
+lava.setPosition(80, 1010)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
     game.over()
 })
 game.onUpdateInterval(30, function on_update_interval2() {
-    lava.setPosition(80, lava.y - .5)
+    if (knight.y > 120) {
+        lava.setPosition(100, lava.y - .5)
+    }
+    
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap3(sprite: Sprite, otherSprite: Sprite) {
+    game.over()
 })

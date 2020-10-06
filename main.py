@@ -669,14 +669,14 @@ game.on_update(on_update)
 def on_update2():
     if info.score() > 10 and controller.dx() > 0 and controller.A.is_pressed():
         knight.set_image(upgraded_knight_right_jump)
-    elif controller.dx() < 0 and controller.A.is_pressed():
+    elif info.score() > 10 and controller.dx() < 0 and controller.A.is_pressed():
         knight.set_image(upgraded_knight_left_jump)
-    elif controller.dx() > 0:
+    elif info.score() > 10 and controller.dx() > 0:
         knight.set_image(upgraded_knight_right)
-    elif controller.dx() < 0:
+    elif info.score() > 10 and controller.dx() < 0:
         knight.set_image(upgraded_knight_left)
-    else:
-        knight.set_image(upgraded_knight_still)
+    # else:
+    #     knight.set_image(upgraded_knight_still)
 game.on_update(on_update2)
 
 lava = sprites.create(img("""
@@ -821,11 +821,15 @@ lava = sprites.create(img("""
    2422244444242444242224444424244424222444442424442422422244444242444242224444424244424222444442424442422244444242444242224444424244424222444442424442422244444242
    4444444444454444444444444445444444444444444544444444444444444454444444444444445444444444444444544444444444444454444444444444445444444444444444544444444444444454
 """))
-lava.set_position(80, 1050)
+lava.set_position(80, 1010)
 
 def on_overlap2(sprite, otherSprite):
     game.over()
 sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap2)
 def on_update_interval2():
-    lava.set_position(80, lava.y - .5)
+    if knight.y > 120:
+        lava.set_position(100, lava.y - .5)
 game.on_update_interval(30, on_update_interval2)
+def on_overlap3(sprite, otherSprite):
+    game.over()
+sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap3)
