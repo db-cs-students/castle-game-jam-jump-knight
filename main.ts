@@ -17,7 +17,7 @@ forever(function on_forever() {
     music.playMelody("- - - - - - - - ", 90)
 })
 //  game Description:
-game.splash("Jump Knight", "Defeat Ghosts to upgrade your knight and escape the castle! But Don't get caught by the lava!")
+game.splash("Jump Knight", "Defeat Ghosts to upgrade your knight and escape the castle by defeating the Dark Knight! But Don't get caught by the lava!")
 //  boss_fight
 let dark_knight = sprites.create(img`
     ....f..............f...............
@@ -272,7 +272,6 @@ let upgraded_knight_still = img`
 let knight = sprites.create(knight_still, SpriteKind.Player)
 controller.moveSprite(knight, 110, 0)
 knight.setPosition(60, 870)
-knight.setFlag(SpriteFlag.ShowPhysics, true)
 // setup
 info.setScore(0)
 info.setLife(1)
@@ -831,7 +830,7 @@ game.onUpdateInterval(30, function on_update_interval2() {
 })
 // boss fight
 let boss_projectile = SpriteKind.create()
-game.onUpdateInterval(600, function on_update_interval3() {
+game.onUpdateInterval(700, function on_update_interval3() {
     let axe = sprites.createProjectileFromSprite(img`
         1 . . f 2 .
         . . 1 . f 2
@@ -840,13 +839,12 @@ game.onUpdateInterval(600, function on_update_interval3() {
     `, dark_knight, 40, 1)
 })
 sprites.onOverlap(SpriteKind.Player, boss_projectile, function on_overlap4(sprite: Sprite, otherSprite: Sprite) {
-    game.over()
+    if (knight.y < 120) {
+        game.over()
+    }
+    
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap3(sprite: Sprite, otherSprite: Sprite) {
     dark_knight.destroy()
     game.over(true)
 })
-if (knight.y < 120) {
-    controller.moveSprite(knight, 30, 0)
-}
-

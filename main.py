@@ -16,7 +16,7 @@ def on_forever():
     music.play_melody("- - - - - - - - ", 90)
 forever(on_forever)
 # game Description:
-game.splash("Jump Knight", "Defeat Ghosts to upgrade your knight and escape the castle! But Don't get caught by the lava!")
+game.splash("Jump Knight", "Defeat Ghosts to upgrade your knight and escape the castle by defeating the Dark Knight! But Don't get caught by the lava!")
 
 # boss_fight
 dark_knight = sprites.create(img("""
@@ -276,7 +276,6 @@ upgraded_knight_still = img("""
 knight = sprites.create(knight_still,SpriteKind.player)
 controller.move_sprite(knight,110,0)
 knight.set_position(60, 870)
-knight.set_flag(SpriteFlag.SHOW_PHYSICS, True)
 
 #setup
 info.set_score(0)
@@ -845,10 +844,11 @@ def on_update_interval3():
         . . 1 . f 2
         1 . . f 2 .
     """), dark_knight, 40, 1)
-game.on_update_interval(600, on_update_interval3)
+game.on_update_interval(700, on_update_interval3)
 
 def on_overlap4(sprite, otherSprite):
-    game.over()
+    if knight.y < 120:
+        game.over()
 sprites.on_overlap(SpriteKind.player, boss_projectile, on_overlap4)
 
 def on_overlap3(sprite, otherSprite):
@@ -856,5 +856,4 @@ def on_overlap3(sprite, otherSprite):
     game.over(True)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap3)
 
-if knight.y < 120:
-    controller.move_sprite(knight,30,0)
+
