@@ -664,15 +664,15 @@ game.onUpdate(function on_update() {
     
 })
 game.onUpdate(function on_update2() {
-    if (info.score() > 10 && controller.dx() > 0 && controller.A.isPressed()) {
+    if (info.score() > 7 && controller.dx() > 0 && controller.A.isPressed()) {
         knight.setImage(upgraded_knight_right_jump)
-    } else if (info.score() > 10 && controller.dx() < 0 && controller.A.isPressed()) {
+    } else if (info.score() > 7 && controller.dx() < 0 && controller.A.isPressed()) {
         knight.setImage(upgraded_knight_left_jump)
-    } else if (info.score() > 10 && controller.dx() > 0) {
+    } else if (info.score() > 7 && controller.dx() > 0) {
         knight.setImage(upgraded_knight_right)
-    } else if (info.score() > 10 && controller.dx() < 0) {
+    } else if (info.score() > 7 && controller.dx() < 0) {
         knight.setImage(upgraded_knight_left)
-    } else if (info.score() > 10) {
+    } else if (info.score() > 7) {
         knight.setImage(upgraded_knight_still)
     }
     
@@ -830,6 +830,7 @@ game.onUpdateInterval(30, function on_update_interval2() {
     
 })
 // boss fight
+let boss_projectile = SpriteKind.create()
 game.onUpdateInterval(600, function on_update_interval3() {
     let axe = sprites.createProjectileFromSprite(img`
         1 . . f 2 .
@@ -838,10 +839,14 @@ game.onUpdateInterval(600, function on_update_interval3() {
         1 . . f 2 .
     `, dark_knight, 40, 1)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function on_overlap4(sprite: Sprite, otherSprite: Sprite) {
-    
+sprites.onOverlap(SpriteKind.Player, boss_projectile, function on_overlap4(sprite: Sprite, otherSprite: Sprite) {
+    game.over()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap3(sprite: Sprite, otherSprite: Sprite) {
     dark_knight.destroy()
     game.over(true)
 })
+if (knight.y < 120) {
+    controller.moveSprite(knight, 30, 0)
+}
+

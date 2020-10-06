@@ -672,15 +672,15 @@ def on_update():
 game.on_update(on_update)
 
 def on_update2():
-    if info.score() > 10 and controller.dx() > 0 and controller.A.is_pressed():
+    if info.score() > 7 and controller.dx() > 0 and controller.A.is_pressed():
         knight.set_image(upgraded_knight_right_jump)
-    elif info.score() > 10 and controller.dx() < 0 and controller.A.is_pressed():
+    elif info.score() > 7 and controller.dx() < 0 and controller.A.is_pressed():
         knight.set_image(upgraded_knight_left_jump)
-    elif info.score() > 10 and controller.dx() > 0:
+    elif info.score() > 7 and controller.dx() > 0:
         knight.set_image(upgraded_knight_right)
-    elif info.score() > 10 and controller.dx() < 0:
+    elif info.score() > 7 and controller.dx() < 0:
         knight.set_image(upgraded_knight_left)
-    elif info.score() > 10:
+    elif info.score() > 7:
         knight.set_image(upgraded_knight_still)
 game.on_update(on_update2)
 
@@ -837,7 +837,7 @@ def on_update_interval2():
 game.on_update_interval(30, on_update_interval2)
 
 #boss fight
-terrain = SpriteKind.create()
+boss_projectile = SpriteKind.create()
 def on_update_interval3():
     axe = sprites.create_projectile_from_sprite(img("""
         1 . . f 2 .
@@ -848,10 +848,13 @@ def on_update_interval3():
 game.on_update_interval(600, on_update_interval3)
 
 def on_overlap4(sprite, otherSprite):
-    pass
-sprites.on_overlap(SpriteKind.player, SpriteKind.player, on_overlap4)
+    game.over()
+sprites.on_overlap(SpriteKind.player, boss_projectile, on_overlap4)
 
 def on_overlap3(sprite, otherSprite):
     dark_knight.destroy()
     game.over(True)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap3)
+
+if knight.y < 120:
+    controller.move_sprite(knight,30,0)
