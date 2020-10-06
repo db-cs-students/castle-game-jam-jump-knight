@@ -420,18 +420,18 @@ scene.setBackgroundImage(img`
 `)
 //  Tilemap make larger later
 scene.setTileMap(img`
-    aaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaa
-    3aaaaaaaaaaa5aa3
-    3aaaaaaaaaaaaaa3
-    3aaaaaaaaaaaaaa3
+    4444444444444444
+    4444444444444444
+    4444444444455555
+    5555555555555555
+    3555555555556553
+    355555aa55aaaaa3
+    35aaaaaaaaaaaaa3
     3aaaaaaaaaaaaaa3
     eeeeeeeeeee...ee
     f..............f
-    f..............f
-    f.ee...2...eeeef
+    f.d............f
+    feee...2...eeeef
     f..............f
     f..............f
     f......eee.....f
@@ -440,7 +440,7 @@ scene.setTileMap(img`
     f..............f
     f......ee......f
     f..............f
-    f.ee.......eeeef
+    feee.......eeeef
     f..............f
     f...2......2...f
     f......eee.....f
@@ -450,7 +450,7 @@ scene.setTileMap(img`
     f......ee......f
     f...2......2...f
     f..........eeeef
-    f.ee...........f
+    feee...........f
     f..............f
     f......eee.....f
     f..............f
@@ -461,11 +461,11 @@ scene.setTileMap(img`
     f..........eeeef
     f..............f
     f...2......2...f
-    f.....eee......f
+    f......ee......f
+    f.c..........d.f
+    feee........eeef
     f..............f
-    feee........ee.f
-    f..............f
-    f.....eee......f
+    f......ee......f
     f...2......2...f
     f..........eeeef
     f..............f
@@ -474,7 +474,7 @@ scene.setTileMap(img`
     f..............f
     feee2......2...f
     f..............f
-    f..............f
+    f............7.f
     fddddddddddddddf
 `)
 scene.setTile(15, img`
@@ -587,7 +587,7 @@ scene.setTile(9, img`
     a a a a a a a a a a a a a a a a
     a a a a a a a a a a a a a a a a
 `)
-scene.setTile(5, img`
+scene.setTile(6, img`
     a a a a d d d d d d d a a a a a
     a a d d d d 1 1 1 d d d d a a a
     a d d d d d d d d d d d d d a a
@@ -621,6 +621,24 @@ scene.setTile(10, img`
     f f f f f 1 2 2 2 1 f f f f f f
     f f f f f f 1 2 1 f f f f f f f
     f f f f f f f 1 f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+`)
+scene.setTile(0, img`
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f 1 f f f f f f f f f f f f 1 f
+    f 1 1 1 f f f f f f f f 1 1 1 f
+    f 1 1 d 1 1 1 f f 1 1 1 d 1 1 f
+    f 1 1 d d 1 1 1 1 1 1 d d 1 1 f
+    f 1 1 1 1 d 1 1 1 1 d 1 1 1 1 f
+    f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f
+    f f 1 1 1 1 1 1 1 1 1 1 1 1 f f
+    f f f 1 1 1 1 1 1 1 1 1 1 f f f
+    f f f f 1 1 1 1 1 1 1 1 f f f f
+    f f f f f f f 1 1 f f f f f f f
     f f f f f f f f f f f f f f f f
     f f f f f f f f f f f f f f f f
     f f f f f f f f f f f f f f f f
