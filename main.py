@@ -833,7 +833,7 @@ sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap2)
 def on_update_interval2():
     if knight.y > 120:
         lava.set_position(100, lava.y - .5)
-game.on_update_interval(30, on_update_interval2)
+game.on_update_interval(29, on_update_interval2)
 
 #boss fight
 boss_projectile = SpriteKind.create()

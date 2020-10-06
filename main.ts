@@ -822,7 +822,7 @@ lava.setPosition(80, 1010)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
     game.over()
 })
-game.onUpdateInterval(30, function on_update_interval2() {
+game.onUpdateInterval(29, function on_update_interval2() {
     if (knight.y > 120) {
         lava.setPosition(100, lava.y - .5)
     }
