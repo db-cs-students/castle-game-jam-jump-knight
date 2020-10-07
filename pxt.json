@@ -4,7 +4,9 @@
     "dependencies": {
         "device": "*",
         "color-coded-tilemap": "*",
-        "color": "*"
+        "color": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.3.1",
+        "darts": "*"
     },
     "files": [
         "main.ts",

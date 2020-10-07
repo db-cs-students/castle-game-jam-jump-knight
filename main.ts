@@ -62,7 +62,25 @@ let dark_knight = sprites.create(img`
     ......................................................................
 `)
 dark_knight.setPosition(65, 90)
-dark_knight.say("What are you doing here?!?!")
+let orb = sprites.create(img`
+    . 1 1 1 1 . . . . . . . . . . .
+    . . 2 c 2 1 1 1 . . . . . . . .
+    . . . . b 2 2 2 1 . . . . . . .
+    . . . 2 2 2 2 2 1 . . . . . . .
+    . 2 2 . . 2 c b 2 1 1 . . . . .
+    . . . . . . . b 2 2 1 1 . . . .
+    . . . . . . . 2 2 2 2 1 . . . .
+    . . . . . 2 2 . 2 2 2 1 . . . .
+    . . . . . . . . . 2 2 1 . . . .
+    . . . . . . 2 2 c 2 2 1 . . . .
+    . . . . . . . . b 2 2 1 . . . .
+    . . 2 2 . . . c 2 2 1 . . . . .
+    . . . . 2 2 2 2 2 2 1 . . . . .
+    . . . . . c 2 2 2 1 . . . . . .
+    . . 2 2 b b 2 1 1 . . . . . . .
+    . 1 1 1 1 1 1 . . . . . . . . .
+`)
+orb.setPosition(100, 90)
 //  sprite player
 let knight_right = img`
     ..................
@@ -420,61 +438,61 @@ scene.setBackgroundImage(img`
 `)
 //  Tilemap make larger later
 scene.setTileMap(img`
-    4444444444444444
-    4444444444444444
-    4444444444455555
-    5555555555555555
-    3555555555556553
-    355555aa55aaaaa3
+    4444443333444444
+    4444333333334555
+    4433444555553355
+    4341555555551535
+    35555a6555555553
+    3555aaaa55aaaaa3
     35aaaaaaaaaaaaa3
     3aaaaaaaaaaaaaa3
     eeeeeeeeeee...ee
     f..............f
-    f.d............f
-    feee...2...eeeef
-    f..............f
-    f..............f
+    f.7.2.....2....f
+    feee...b.b.eeeef
+    f......8.8.....f
+    f......8.8.....f
     f......eee.....f
     f..............f
-    feee2......2...f
-    f..............f
+    feee2..bb..2...f
+    f......88......f
     f......ee......f
     f..............f
-    feee.......eeeef
-    f..............f
-    f...2......2...f
-    f......eee.....f
-    f..............f
-    feee...........f
-    f..............f
+    feee...b.b.eeeef
+    f......8.8.....f
+    f...2..8.8.2...f
+    f......eee...c.f
+    f.9.........eeef
+    feee...bb......f
+    f......88......f
     f......ee......f
     f...2......2...f
-    f..........eeeef
-    feee...........f
-    f..............f
+    f......b.b.eeeef
+    feee...8.8.....f
+    f......8.8.....f
     f......eee.....f
-    f..............f
-    feee2......2...f
-    f..............f
+    f.....b.b......f
+    feee2.8.8..2...f
+    f.....8.8......f
     f.....eee......f
     f..............f
     f..........eeeef
-    f..............f
-    f...2......2...f
+    f......bb......f
+    f...2..88..2...f
     f......ee......f
-    f.c..........d.f
-    feee........eeef
-    f..............f
+    f.c..........7.f
+    feee...bb...eeef
+    f......88......f
     f......ee......f
     f...2......2...f
-    f..........eeeef
-    f..............f
-    f..............f
+    f.....b.b.beeeef
+    f.....8.8.e....f
+    f.....8.8......f
     f.....eee......f
     f..............f
     feee2......2...f
     f..............f
-    f............7.f
+    f........9.....f
     fddddddddddddddf
 `)
 scene.setTile(15, img`
@@ -552,24 +570,24 @@ scene.setTile(1, img`
     b c c c c c d d d d c c c c c b
 `)
 scene.setTile(3, img`
-    a a a c c d d d d d d c c a a a
-    a a a a a a d d d d a a a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a c d d d d d d c a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a c d d d d d d c a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a a a d d d d a a a a a a
-    a a a a a a d d d d a a a a a a
-    a a a c c d d d d d d c c a a a
+    . d c b b b d d d 1 b b b c d .
+    . d c b b b d d 1 d b b b c d .
+    . d c c b d d d d d d b c c d .
+    b d d d d d d d d d d d d d d b
+    c d d d c c d d d d c c d d d c
+    d b d d b c c d d c c b d d b d
+    d d d d b b c d d c b b d d d d
+    d d d d c b d d d d b c d d d d
+    d d d d c d 1 d d d d c d d d d
+    d d d d d d d 1 d d d d d d d d
+    d b d d b c d d d d c b d d b d
+    c d d b c d d d d d d c b d d c
+    b d c b c d d d d d d c b c d b
+    . d b c d d d d d d d d c b d .
+    . d d d b c d d d d c b d d d .
+    . d d b b c c d d c c b b d d .
 `)
-scene.setTile(9, img`
+scene.setTile(10, img`
     a a a a a a a a a a a a a a a a
     a a a a a a a a a a a a a a a a
     a a a a a a a a a a a a a a a a
@@ -605,9 +623,63 @@ scene.setTile(6, img`
     a a a a d d d d d d d a a a a a
     a a a a a a a a a a a a a a a a
 `)
+scene.setTile(1, img`
+    5 5 5 5 5 b c d d c b 5 5 5 5 5
+    5 5 5 5 5 d 1 d d d d 5 5 5 5 5
+    5 5 5 5 5 1 d b b d d 5 5 5 5 5
+    5 5 5 5 5 d c d f f d 5 5 5 5 5
+    5 5 5 5 5 5 d f f d 5 5 5 5 5 5
+    5 5 5 5 5 f f . . f f 5 5 5 5 5
+    5 5 5 5 5 f . 5 . . f 5 5 5 5 5
+    5 5 5 5 f f 5 5 5 . f f 5 5 5 5
+    5 5 5 5 f f 5 4 2 5 f f 5 5 5 5
+    5 5 5 5 f . 4 2 2 5 . f 5 5 5 5
+    5 5 5 5 f 5 5 4 4 5 . f 5 5 5 5
+    5 5 5 5 f . 5 4 4 4 5 f 5 5 5 5
+    5 5 5 5 f . 5 5 5 5 . f 5 5 5 5
+    5 5 5 5 f d e e e e d f 5 5 5 5
+    5 5 5 5 5 f f e e f f 5 5 5 5 5
+    5 5 5 5 5 5 5 f f 5 5 5 5 5 5 5
+`)
+scene.setTile(11, img`
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f 1 f f f 1 f f f f f
+    f f f f f 1 f f f f f 1 f f f f
+    f f f f f 1 1 f f f 1 1 f f f f
+    f f f f 1 1 f 1 1 1 f 1 1 f f f
+    f f f f f f 1 1 f 1 1 f f f f f
+    f f f f f f f 1 1 1 f f f f f f
+    f f f f f f f f 1 f 1 f f f f f
+    f f f f f f f f 1 1 1 f f f f f
+    f f f f f f f 1 f 1 f f f f f f
+    f f f f f f f 1 1 1 f f f f f f
+    f f f f f f f 1 f 1 f f f f f f
+    f f f f f f f 1 1 1 f f f f f f
+    f f f f f f 1 f 1 f f f f f f f
+    f f f f f f 1 1 1 f f f f f f f
+`)
+scene.setTile(8, img`
+    . . . . . . 1 . 1 . . . . . . .
+    . . . . . . . 1 1 . . . . . . .
+    . . . . . 1 1 1 . . . . . . . .
+    . . . . . 1 . 1 . . . . . . . .
+    . . . . . 1 1 1 . . . . . . . .
+    . . . . . 1 . 1 . . . . . . . .
+    . . . . . 1 1 1 . . . . . . . .
+    . . . . . . 1 . 1 . . . . . . .
+    . . . . . . 1 1 1 . . . . . . .
+    . . . . . . . 1 . 1 . . . . . .
+    . . . . . . . 1 1 1 . . . . . .
+    . . . . . . 1 . 1 . . . . . . .
+    . . . . . . 1 1 1 . . . . . . .
+    . . . . . . . 1 . 1 . . . . . .
+    . . . . . . . 1 1 1 . . . . . .
+    . . . . . . 1 . 1 . . . . . . .
+`)
 // enemies
 //  Powerups
-scene.setTile(10, img`
+scene.setTile(7, img`
     f f f f f f f f f f f f f f f f
     f f f f f f f f f f f f f f f f
     f f f f 1 1 f f f 1 1 f f f f f
@@ -625,60 +697,112 @@ scene.setTile(10, img`
     f f f f f f f f f f f f f f f f
     f f f f f f f f f f f f f f f f
 `)
-scene.setTile(0, img`
+scene.setTile(12, img`
     f f f f f f f f f f f f f f f f
     f f f f f f f f f f f f f f f f
     f f f f f f f f f f f f f f f f
-    f 1 f f f f f f f f f f f f 1 f
+    1 1 1 f f f f f f f f f f 1 1 1
     f 1 1 1 f f f f f f f f 1 1 1 f
     f 1 1 d 1 1 1 f f 1 1 1 d 1 1 f
-    f 1 1 d d 1 1 1 1 1 1 d d 1 1 f
-    f 1 1 1 1 d 1 1 1 1 d 1 1 1 1 f
-    f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f
-    f f 1 1 1 1 1 1 1 1 1 1 1 1 f f
-    f f f 1 1 1 1 1 1 1 1 1 1 f f f
-    f f f f 1 1 1 1 1 1 1 1 f f f f
+    f 1 1 d d 1 1 d d 1 1 d d 1 1 f
+    f 1 d 1 b d 1 d d 1 d b 1 d 1 f
+    f d 1 1 1 b 1 d d 1 b 1 1 1 d f
+    f f 1 1 1 b 1 d d 1 b 1 1 1 f f
+    f f f 1 1 1 1 d d 1 1 1 1 f f f
+    f f f f 1 1 1 d 1 1 1 1 f f f f
     f f f f f f f 1 1 f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+`)
+scene.setTile(9, img`
+    ffffffffffffffffffff
+    ffffffffffffffffffff
+    ffffffffffffffffffff
+    fffffffffff444ffffff
+    ffffffffff45554fffff
+    44fffff444554554ffff
+    454fff454f44f454ffff
+    f454f454fffff454ffff
+    ff45454ffffff454ffff
+    fff454ffffff454fffff
+    ff45454ffff4554fffff
+    f454f454ff455444ffff
+    454fff45445555554fff
+    44fffff44f444444ffff
+    ffffffffffffffffffff
+    ffffffffffffffffffff
+`)
+scene.setTile(7, img`
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f 1 1 f f f 1 1 f f f f f
+    f f f 1 2 2 1 f 1 2 2 1 f f f f
+    f f 1 2 2 2 2 1 2 2 2 2 1 f f f
+    f f 1 2 2 2 2 2 2 1 2 2 1 f f f
+    f f 1 2 2 2 2 2 1 2 2 2 1 f f f
+    f f 1 2 2 2 2 2 2 2 2 2 1 f f f
+    f f f 1 2 2 2 2 2 2 2 1 f f f f
+    f f f f 1 2 2 2 2 2 1 f f f f f
+    f f f f f 1 2 2 2 1 f f f f f f
+    f f f f f f 1 2 1 f f f f f f f
+    f f f f f f f 1 f f f f f f f f
     f f f f f f f f f f f f f f f f
     f f f f f f f f f f f f f f f f
     f f f f f f f f f f f f f f f f
 `)
 game.onUpdateInterval(2000, function on_update_interval() {
     let ghost1 = sprites.createProjectileFromSide(img`
-        ........111111.....
-        .......11cffff1....
-        ......11fffffff1...
-        ......1cfffffff1...
-        ......1cffff1ff1...
-        ......1fffffd2f1...
-        ......1ffffffff1...
-        .......1ffff2221...
-        ......1ffff2ffff11.
-        ......1ffffffffff1.
-        ...111fffffffff111.
-        ..1ffffffffffc11...
-        .1ffcffffffc11.....
-        ..1b1cfffc11.......
-        .....111111........
-        ...................
+        ........................
+        ........................
+        ........................
+        ..........1111..........
+        ........11555511........
+        .......1255555521.......
+        ......12455555551.......
+        ......144555555541......
+        ......144455555541......
+        ......144444455541......
+        ......144444455541......
+        ......124444444541......
+        ......112244214541......
+        .......1b224b14421......
+        .......111244bb1111.....
+        .......1111b122252b1....
+        ......11111111b45251....
+        ...1111111111..14141....
+        .....111111.....1.1.....
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
     `, 80, 20)
     let ghost2 = sprites.createProjectileFromSide(img`
-        ......111111.......
-        .....1fffffc1......
-        ....1ffffffff1.....
-        ....1ffffffffc1....
-        ....1ff1fffffc1....
-        ....1f2dffffff1....
-        ....1fffffffff1....
-        ...11222fffff1.....
-        ..11ffff2fffff1....
-        ..1fffffffffff1....
-        ..111ffffffffff11..
-        .....1cffffffffff1.
-        ......11cffffffcff1
-        ........11cfffc1b1.
-        ..........11111....
-        ...................
+        ........................
+        ........................
+        ........................
+        ..........1111..........
+        ........11555511........
+        .......1255555521.......
+        .......15555555421......
+        ......145555555441......
+        ......145555554441......
+        ......145554444441......
+        ......145554444441......
+        ......145444444421......
+        ......145412442211......
+        ......12441b422b1.......
+        .....1111bb442111.......
+        ....1b252221b1111.......
+        ....15254b11111111......
+        ....14141..1111111111...
+        .....1.1.....111111.....
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
     `, -80, 0)
     ghost1.setFlag(SpriteFlag.DestroyOnWall, false)
     ghost2.setFlag(SpriteFlag.DestroyOnWall, false)
@@ -688,41 +812,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function on_overlap(
     info.changeScoreBy(1)
     otherSprite.startEffect(effects.fire)
     music.pewPew.play()
-})
-// animation
-//  lava.set_position(128, lava.y - .5)
-game.onUpdate(function on_update() {
-    //  knight.say(str(controller.x()))
-    if (controller.dx() > 0 && controller.A.isPressed()) {
-        knight.setImage(knight_right_jump)
-    } else if (controller.dx() < 0 && controller.A.isPressed()) {
-        knight.setImage(knight_left_jump)
-    } else if (controller.dx() > 0) {
-        knight.setImage(knight_right)
-    } else if (controller.dx() < 0) {
-        knight.setImage(knight_left)
-    } else {
-        knight.setImage(knight_still)
-    }
-    
-    if (info.score() > 10 && controller.dx() > 0 && controller.A.isPressed()) {
-        knight.setImage(upgraded_knight_right_jump)
-    } else if (controller.dx() < 0 && controller.A.isPressed()) {
-        knight.setImage(upgraded_knight_left_jump)
-    } else if (controller.dx() > 0) {
-        knight.setImage(upgraded_knight_right)
-    } else if (controller.dx() < 0) {
-        knight.setImage(upgraded_knight_left)
-    } else {
-        knight.setImage(upgraded_knight_still)
-    }
-    
-    if (lava.y > 125) {
-        lava.vy = -25
-    } else {
-        lava.vy = 0
-    }
-    
 })
 let lava = sprites.create(img`
     44444444444544444444444444454444444444444445444444444444444444544444444444444444544444444444444445444444444444444544444444444444454444444444444444445444444444444444544444444444444454444444444444445444444444444444544444444444.
@@ -868,6 +957,43 @@ let lava = sprites.create(img`
 `, SpriteKind.Enemy)
 lava.setPosition(120, 1020)
 lava.setFlag(SpriteFlag.ShowPhysics, true)
+// animation
+//  lava.set_position(128, lava.y - .5)
+game.onUpdate(function on_update() {
+    //  knight.say(str(controller.x()))
+    if (controller.dx() > 0 && controller.A.isPressed()) {
+        knight.setImage(knight_right_jump)
+    } else if (controller.dx() < 0 && controller.A.isPressed()) {
+        knight.setImage(knight_left_jump)
+    } else if (controller.dx() > 0) {
+        knight.setImage(knight_right)
+    } else if (controller.dx() < 0) {
+        knight.setImage(knight_left)
+    } else {
+        knight.setImage(knight_still)
+    }
+    
+    if (info.score() > 10 && controller.dx() > 0 && controller.A.isPressed()) {
+        knight.setImage(upgraded_knight_right_jump)
+    } else if (controller.dx() < 0 && controller.A.isPressed()) {
+        knight.setImage(upgraded_knight_left_jump)
+    } else if (controller.dx() > 0) {
+        knight.setImage(upgraded_knight_right)
+    } else if (controller.dx() < 0) {
+        knight.setImage(upgraded_knight_left)
+    } else {
+        knight.setImage(upgraded_knight_still)
+    }
+    
+    if (lava.y > 125) {
+        lava.setVelocity(0, -23)
+    } else {
+        lava.setVelocity(0, 0)
+        lava.setPosition(174, 125)
+        scene.cameraShake()
+    }
+    
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
     game.over()
 })
