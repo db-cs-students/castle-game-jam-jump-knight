@@ -606,7 +606,8 @@ scene.set_tile(5, img("""
 
 
 def on_update_interval():
-    ghost1 = sprites.create_projectile_from_side(img("""
+    if knight.y > 250:
+        ghost1 = sprites.create_projectile_from_side(img("""
         ........111111.....
         .......11cffff1....
         ......11fffffff1...
@@ -624,7 +625,7 @@ def on_update_interval():
         .....111111........
         ...................
     """), 80, 20)
-    ghost2 = sprites.create_projectile_from_side(img("""
+        ghost2 = sprites.create_projectile_from_side(img("""
         ......111111.......
         .....1fffffc1......
         ....1ffffffff1.....
@@ -642,15 +643,16 @@ def on_update_interval():
         ..........11111....
         ...................
     """), -80, 0)
-    ghost1.set_flag(SpriteFlag.DESTROY_ON_WALL, False)
-    ghost2.set_flag(SpriteFlag.DESTROY_ON_WALL, False)
+        ghost1.set_flag(SpriteFlag.DESTROY_ON_WALL, False)
+        ghost2.set_flag(SpriteFlag.DESTROY_ON_WALL, False)
 game.on_update_interval(2000, on_update_interval)
 
 def on_overlap(sprite, otherSprite):
-    otherSprite.destroy()
-    info.change_score_by(1)
-    otherSprite.start_effect(effects.fire)
-    music.pew_pew.play()
+    if knight.y > 120:
+        otherSprite.destroy()
+        info.change_score_by(1)
+        otherSprite.start_effect(effects.fire)
+        music.pew_pew.play()
 sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap)
 
 
@@ -836,7 +838,7 @@ def on_update_interval2():
 game.on_update_interval(29, on_update_interval2)
 
 #boss fight
-boss_projectile = SpriteKind.create()
+
 def on_update_interval3():
     axe = sprites.create_projectile_from_sprite(img("""
         1 . . f 2 .
@@ -844,12 +846,12 @@ def on_update_interval3():
         . . 1 . f 2
         1 . . f 2 .
     """), dark_knight, 40, 1)
-game.on_update_interval(700, on_update_interval3)
+game.on_update_interval(800, on_update_interval3)
 
 def on_overlap4(sprite, otherSprite):
     if knight.y < 120:
         game.over()
-sprites.on_overlap(SpriteKind.player, boss_projectile, on_overlap4)
+sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap4)
 
 def on_overlap3(sprite, otherSprite):
     dark_knight.destroy()

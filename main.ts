@@ -601,7 +601,10 @@ scene.setTile(5, img`
 `)
 // enemies
 game.onUpdateInterval(2000, function on_update_interval() {
-    let ghost1 = sprites.createProjectileFromSide(img`
+    let ghost1: Sprite;
+    let ghost2: Sprite;
+    if (knight.y > 250) {
+        ghost1 = sprites.createProjectileFromSide(img`
         ........111111.....
         .......11cffff1....
         ......11fffffff1...
@@ -619,7 +622,7 @@ game.onUpdateInterval(2000, function on_update_interval() {
         .....111111........
         ...................
     `, 80, 20)
-    let ghost2 = sprites.createProjectileFromSide(img`
+        ghost2 = sprites.createProjectileFromSide(img`
         ......111111.......
         .....1fffffc1......
         ....1ffffffff1.....
@@ -637,14 +640,19 @@ game.onUpdateInterval(2000, function on_update_interval() {
         ..........11111....
         ...................
     `, -80, 0)
-    ghost1.setFlag(SpriteFlag.DestroyOnWall, false)
-    ghost2.setFlag(SpriteFlag.DestroyOnWall, false)
+        ghost1.setFlag(SpriteFlag.DestroyOnWall, false)
+        ghost2.setFlag(SpriteFlag.DestroyOnWall, false)
+    }
+    
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
-    otherSprite.destroy()
-    info.changeScoreBy(1)
-    otherSprite.startEffect(effects.fire)
-    music.pewPew.play()
+    if (knight.y > 120) {
+        otherSprite.destroy()
+        info.changeScoreBy(1)
+        otherSprite.startEffect(effects.fire)
+        music.pewPew.play()
+    }
+    
 })
 // animation
 game.onUpdate(function on_update() {
@@ -829,8 +837,7 @@ game.onUpdateInterval(29, function on_update_interval2() {
     
 })
 // boss fight
-let boss_projectile = SpriteKind.create()
-game.onUpdateInterval(700, function on_update_interval3() {
+game.onUpdateInterval(800, function on_update_interval3() {
     let axe = sprites.createProjectileFromSprite(img`
         1 . . f 2 .
         . . 1 . f 2
@@ -838,7 +845,7 @@ game.onUpdateInterval(700, function on_update_interval3() {
         1 . . f 2 .
     `, dark_knight, 40, 1)
 })
-sprites.onOverlap(SpriteKind.Player, boss_projectile, function on_overlap4(sprite: Sprite, otherSprite: Sprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function on_overlap4(sprite: Sprite, otherSprite: Sprite) {
     if (knight.y < 120) {
         game.over()
     }
