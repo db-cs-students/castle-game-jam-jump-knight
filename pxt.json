@@ -1,10 +1,12 @@
 {
-    "name": "Castle Game Jam",
+    "name": "Excalibur!!!",
     "description": "",
     "dependencies": {
         "device": "*",
         "color-coded-tilemap": "*",
-        "color": "*"
+        "color": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.3.1",
+        "darts": "*"
     },
     "files": [
         "main.ts",
@@ -15,7 +17,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.2.6",
+        "target": "1.2.9",
         "targetId": "arcade"
     },
     "supportedTargets": [
